@@ -30,6 +30,8 @@ namespace parser0 {
         void fill_first();
         // 计算follow集合
         void fill_follow();
+        // 计算follow的辅助函数
+        std::set<syntax_word> expand_on(std::size_t non_ix);
         // 查询某一字符是否是终结字符
         static bool is_terminate(const syntax_word& word) ;
         // 查询某一字符是否是空字符
@@ -45,6 +47,8 @@ namespace parser0 {
         static syntax_word non_terminate_word(std::size_t w_id);
 
         static syntax_word empty_word();
+
+        static syntax_word end_word();
 
         // 提供初始字符
         explicit ctx_free_syntax(std::size_t start_word_ix);
@@ -65,5 +69,8 @@ namespace parser0 {
 
         // 打印first集合
         [[nodiscard]] std::string first_to_string() const;
+
+        // 答应follow集合
+        [[nodiscard]] std::string follow_to_string() const;
     };
 }

@@ -35,4 +35,5 @@ void test_first() {
     syn.fill();
 
     std::cout << syn.first_to_string() << std::endl;
+    std::cout << syn.follow_to_string() << std::endl;
 }
